@@ -1,23 +1,41 @@
-# This is a sample Python script.
+from PyQt5.QtWidgets import (
+    QApplication, QWidget,
+    QHBoxLayout, QVBoxLayout,
+    QPushButton, QLabel)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+app = QApplication([])
+
+window = QWidget()
+
+btn1 = QPushButton('Ответить')
+btn2 = QPushButton('Андрей лох')
+# 2 кнопки
+
+btn3 = QPushButton('На забив')
+
+rbtn_1 = QLabel('Вариант 1')
+# лейбл 1
 
 
-def print_hi(name):
 
 
 
+layout_ans1 = QHBoxLayout()
 
+layout_ans1.addWidget(btn1)
+layout_ans1.addWidget(btn2)
 
+line = QVBoxLayout()
 
-   # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint
+line.addLayout(rbtn_1)
+line.addLayout(layout_ans1)
 
+layout_ans2 = QHBoxLayout()
+layout_ans2.addWidget(btn3)
+layout_ans2.addWidget(line)
 
+window.setLayout(line)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+window.setWindowTitle('Memo Card')
+window.show()
+app.exec()
